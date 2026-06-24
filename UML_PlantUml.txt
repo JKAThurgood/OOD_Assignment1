@@ -1,0 +1,110 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+abstract class Shape {
++move(deltaX: Double, deltaY: Double): void
+}
+
+class Point {
+-x: Double
+-y: Double
+
++Point(x: Double, y: Double)
++getX(): Double
++getY(): Double
++clone(): Point
++move(deltaX: Double, deltaY: Double): void
+
+}
+
+class Line {
+-startPoint: Point
+-endPoint: Point
+
++Line(startPoint: Point, endPoint: Point)
++getStartPoint(): Point
++getEndPoint(): Point
++getSlope(): Double
++getLength(): Double
++move(deltaX: Double, deltaY: Double): void
+
+-validateLength(): void
+
+}
+
+class Rectangle {
+-topLeft: Point
+-bottomRight: Point
+
++Rectangle(topLeft: Point, bottomRight: Point)
++getTopLeft(): Point
++getBottomRight(): Point
++getArea(): Double
++move(deltaX: Double, deltaY: Double): void
+
+-validateDimensions(): void
+
+}
+
+class Square {
++Square(topLeft: Point, bottomRight: Point)
+
+-validateSquare(): void
+
+}
+
+class Ellipse {
+-center: Point
+-radiusX: Double
+-radiusY: Double
+
++Ellipse(center: Point, radiusX: Double, radiusY: Double)
++getCenter(): Point
++getRadiusX(): Double
++getRadiusY(): Double
++getArea(): Double
++move(deltaX: Double, deltaY: Double): void
+
+-validateArea(): void
+
+}
+
+class Circle {
++Circle(center: Point, radius: Double)
+
+-validateCircle(): void
+
+}
+
+class Triangle {
+-pointA: Point
+-pointB: Point
+-pointC: Point
+
++Triangle(pointA: Point, pointB: Point, pointC: Point)
++getPointA(): Point
++getPointB(): Point
++getPointC(): Point
++getArea(): Double
++move(deltaX: Double, deltaY: Double): void
+
+-validateArea(): void
+
+}
+
+Shape <|-- Point
+Shape <|-- Line
+Shape <|-- Rectangle
+Shape <|-- Ellipse
+Shape <|-- Triangle
+
+Rectangle <|-- Square
+Ellipse <|-- Circle
+
+Line *-- "2" Point
+Rectangle *-- "2" Point
+Triangle *-- "3" Point
+Ellipse *-- "1" Point
+
+@enduml
