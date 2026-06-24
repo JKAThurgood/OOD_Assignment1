@@ -49,7 +49,7 @@ class TriangleTest {
     }
 
     @Test
-    fun testTriangleAreaArbitary() {
+    fun testTriangleAreaArbitrary() {
         // Checking: getArea() calculates area for arbitrary triangle
         val triangle = Triangle(Point(0.0, 0.0), Point(4.0, 0.0), Point(2.0, 3.0))
         assertEquals(6.0, triangle.getArea(), 0.0001)  // (4 * 3) / 2 = 6
