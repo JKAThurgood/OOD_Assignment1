@@ -1,6 +1,6 @@
 package org.example
 
-open class Rectangle(a: Point, b: Point) : Shape() {
+open class Rectangle @Throws(IllegalArgumentException::class) constructor(a: Point, b: Point) : Shape {
 
     private val topLeft: Point
     private val bottomRight: Point

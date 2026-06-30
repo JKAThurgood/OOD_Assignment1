@@ -1,6 +1,7 @@
 package org.example
 
-class Triangle(pointA: Point, pointB: Point, pointC: Point) : Shape() {
+class Triangle @Throws(IllegalArgumentException::class) constructor(pointA: Point, pointB: Point, pointC: Point) :
+    Shape {
     private val pointA: Point = pointA.clone()
     private val pointB: Point = pointB.clone()
     private val pointC: Point = pointC.clone()

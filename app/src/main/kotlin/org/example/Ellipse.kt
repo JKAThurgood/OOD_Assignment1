@@ -2,7 +2,11 @@ package org.example
 
 import kotlin.math.PI
 
-open class Ellipse(center: Point, radiusX: Double, radiusY: Double) : Shape() {
+open class Ellipse @Throws(IllegalArgumentException::class) constructor(
+    center: Point,
+    radiusX: Double,
+    radiusY: Double
+) : Shape {
     private val center: Point
     private val radiusX: Double
     private val radiusY: Double
@@ -14,7 +18,6 @@ open class Ellipse(center: Point, radiusX: Double, radiusY: Double) : Shape() {
         this.center = center.clone()
         this.radiusX = radiusX
         this.radiusY = radiusY
-        validateArea()
     }
 
     fun getCenter(): Point = center.clone()
@@ -29,9 +32,4 @@ open class Ellipse(center: Point, radiusX: Double, radiusY: Double) : Shape() {
         center.move(deltaX, deltaY)
     }
 
-    private fun validateArea() {
-        if (getArea() == 0.0) {
-            throw IllegalArgumentException("An ellipse cannot have an area of zero")
-        }
-    }
 }

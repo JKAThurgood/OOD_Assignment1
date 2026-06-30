@@ -1,6 +1,7 @@
 package org.example
 
-class Square(pointA: Point, pointB: Point) : Rectangle(pointA, pointB) {
+class Square @Throws(IllegalArgumentException::class) constructor(pointA: Point, pointB: Point) :
+    Rectangle(pointA, pointB) {
     init {
         validateSquare()
     }

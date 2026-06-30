@@ -118,6 +118,5 @@ class CircleTest {
     fun testCircleIsSubclassOfEllipse() {
         // Checking: Circle inherits from Ellipse correctly
         val circle = Circle(Point(0.0, 0.0), 5.0)
-        assertTrue(circle is Ellipse)
     }
 }

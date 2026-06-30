@@ -1,6 +1,6 @@
 package org.example
 
-class Line(startPoint: Point, endPoint: Point) : Shape() {
+class Line @Throws(IllegalArgumentException::class) constructor(startPoint: Point, endPoint: Point) : Shape {
     private val startPoint: Point = startPoint.clone()
     private val endPoint: Point = endPoint.clone()
 

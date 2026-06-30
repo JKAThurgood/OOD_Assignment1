@@ -2,8 +2,8 @@
 
 skinparam classAttributeIconSize 0
 
-abstract class Shape {
-+move(deltaX: Double, deltaY: Double): void
+interface Shape {
+    +move(deltaX: Double, deltaY: Double): void
 }
 
 class Point {
@@ -93,18 +93,18 @@ class Triangle {
 
 }
 
-Shape <|-- Point
-Shape <|-- Line
-Shape <|-- Rectangle
-Shape <|-- Ellipse
-Shape <|-- Triangle
+Shape <|.. Point
+Shape <|.. Line
+Shape <|.. Rectangle
+Shape <|.. Ellipse
+Shape <|.. Triangle
 
 Rectangle <|-- Square
 Ellipse <|-- Circle
 
-Line *-- "2" Point
-Rectangle *-- "2" Point
-Triangle *-- "3" Point
-Ellipse *-- "1" Point
+Line o-- "2" Point
+Rectangle o-- "2" Point
+Triangle o-- "3" Point
+Ellipse o-- "1" Point
 
 @enduml
